@@ -1,5 +1,4 @@
 export const COLORS = {
-    black: '#595959',
     theme : "#147fcd",
     button: '#37b5ba',
     bottomTab:'#151822',
@@ -13,7 +12,7 @@ export const COLORS = {
     lightGreen : '#dcf8c6',
     yellow:'yellow',
     orange:'#FF5501',
-    blue:'#051E45',
+    blue:'#0d44af',
     liteBlack : '#0e293547',
     gradient : ['#268281','#779f92','#a2af9c']
 }

@@ -1,4 +1,4 @@
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity,Image} from 'react-native';
 import React, {useState, memo} from 'react';
 import api from '../api';
 import IntlProvider from '../Constants/IntlProvider';
@@ -12,16 +12,17 @@ import {COLORS} from '../Constants/Color';
 import {useNavigation} from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import LinearGradient from 'react-native-linear-gradient';
 
 export const LoginFormInitialValues = props => ({
-  email: '',
+  userid: '',
   password: '',
 });
 
 export const LoginFormValidator = () => {
   return yup.object().shape({
-    email: yup.string().required('UserName Required'),
-    password: yup.string().required('Password is required'),
+    userid: yup.string().required('Enter Your UserId '),
+    password: yup.string().required('Enter Your Password '),
   });
 };
 
@@ -34,7 +35,7 @@ const Login = withGlobalize(
     const Login = async values => {
       setLoading(true);
       const payload = {
-        userName: values.email,
+        userName: values.userid,
         password: values.password,
       };
       try {
@@ -56,24 +57,25 @@ const Login = withGlobalize(
     };
 
     return (
-      <View style={{flex: 1, backgroundColor: 'white'}}>
+      <LinearGradient colors={[COLORS.blue,  'white']} end={{ x: 0, y: 1.5 }} style={{flex:1}}>
         <Loader loading={loading}></Loader>
-        <Text
-          style={{
-            alignSelf: 'center',
-            fontWeight: 'bold',
-            color: COLORS.blue,
-            fontSize: 20,
-            top: 100,
-          }}>
-          LOGO
-        </Text>
+
+        <View style={{marginTop:100}}>
+           <Image
+                source={require('../assets/logo.png')}
+                style={{
+                    width: 200 ,
+                    height: 50,
+                    alignSelf: 'center'
+                }}
+            />
+            </View>
         <Formik
           initialValues={LoginFormInitialValues(props)}
           validationSchema={LoginFormValidator}
           onSubmit={(values, {resetForm}) => {
             console.log(values);
-            navigation.navigate('MainRoute');
+            // navigation.navigate('MainRoute');
             // Login(values, resetForm());
           }}>
           {({
@@ -98,6 +100,7 @@ const Login = withGlobalize(
                     backgroundColor: COLORS.blue,
                     alignSelf: 'center',
                   }}>
+                    <Text style={{color:'white',marginLeft:10}}>User Id</Text>
                   <View
                     style={{
                       flexDirection: 'row',
@@ -108,17 +111,17 @@ const Login = withGlobalize(
                       borderRadius: 5,
                     }}>
                     <TextInput
-                      value={values.email}
-                      placeholder="Enter email"
+                      value={values.userid}
+                      placeholder="Enter User Id"
                       onChangeText={text => {
-                        setFieldValue('email', text);
+                        setFieldValue('userid', text);
                       }}
                     />
-                    <AntDesign name="user" size={20} style={{margin: 10}} />
                   </View>
-                  {errors.email &&
-                  <Text style={{ fontSize: 10, color: 'red',marginLeft: 30 }}> * {errors.email}</Text>
+                  {errors.userid &&
+                  <Text style={{ fontSize: 10, color: 'red',marginLeft: 30 }}> * {errors.userid}</Text>
                }
+               <Text style={{color:'white',marginLeft:10}}>Password</Text>
                   <View
                     style={{
                       flexDirection: 'row',
@@ -142,7 +145,7 @@ const Login = withGlobalize(
                }
                   <TouchableOpacity
                     style={{
-                      backgroundColor: 'white',
+                      backgroundColor: COLORS.white,
                       borderRadius: 5,
                       padding: 10,
                       width: 100,
@@ -152,19 +155,20 @@ const Login = withGlobalize(
                     onPress={() => {
                       handleSubmit();
                     }}>
-                    <Text style={{alignSelf: 'center', color: COLORS.blue}}>
+                    <Text style={{alignSelf: 'center', color: COLORS.blue,fontWeight:'bold'}}>
                       Sign In
                     </Text>
                   </TouchableOpacity>
+                 <TouchableOpacity style={{alignSelf: 'flex-end', margin: 10,marginTop:30}}
+                 onPress={()=>{
+
+                 }}>
                   <Text
-                    style={{color: 'white', alignSelf: 'center', margin: 5}}>
-                    OR
+                    style={{color: 'white',alignSelf: 'center', }}>
+                    Forgot Password ?
                   </Text>
-                  <Text
-                    style={{color: 'white', alignSelf: 'center', margin: 5}}>
-                    Forgit Password ?
-                  </Text>
-                  <View style={{flexDirection: 'row'}}>
+                  </TouchableOpacity>
+                  {/* <View style={{flexDirection: 'row'}}>
                     <Text
                       style={{color: 'white', alignSelf: 'center', margin: 5}}>
                       Don't have an account ?{' '}
@@ -183,13 +187,14 @@ const Login = withGlobalize(
                         Sign Up
                       </Text>
                     </TouchableOpacity>
-                  </View>
+                  </View> */}
                 </Card>
               </View>
             </>
           )}
         </Formik>
-      </View>
+      
+      </LinearGradient>
     );
   }),
 );
