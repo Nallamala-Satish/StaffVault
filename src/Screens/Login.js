@@ -57,16 +57,17 @@ const Login = withGlobalize(
     };
 
     return (
-      <LinearGradient colors={[COLORS.blue,  'white']} end={{ x: 0, y: 1.5 }} style={{flex:1}}>
+      <LinearGradient colors={[COLORS.blue,  COLORS.white]} start={{x: 0.5, y: 0.5}} end={{x: 2, y: 2}} style={{flex:1}}>
         <Loader loading={loading}></Loader>
 
-        <View style={{marginTop:100}}>
+        <View style={{marginTop:100,marginLeft:10}}>
            <Image
                 source={require('../assets/logo.png')}
                 style={{
                     width: 200 ,
                     height: 50,
-                    alignSelf: 'center'
+                    margin:20,
+           
                 }}
             />
             </View>
@@ -92,81 +93,75 @@ const Login = withGlobalize(
               <View
                 style={{
                   justifyContent: 'center',
-                  flex: 1,
+                  // flex: 1,
                 }}>
                 <Card
                   style={{
-                    padding: 30,
-                    backgroundColor: COLORS.blue,
+                    padding: 10,
+                    backgroundColor: COLORS.white,
                     alignSelf: 'center',
+                    width:300
                   }}>
-                    <Text style={{color:'white',marginLeft:10}}>User Id</Text>
+                    <Text style={{color:'gray',margin:10}}>Login to your account</Text>
                   <View
                     style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      width: 250,
-                      backgroundColor: 'white',
-                      margin: 10,
-                      borderRadius: 5,
+                      marginTop:20
                     }}>
                     <TextInput
                       value={values.userid}
-                      placeholder="Enter User Id"
+                      placeholder=" Login ID "
                       onChangeText={text => {
                         setFieldValue('userid', text);
                       }}
+                      style={{borderWidth:2,borderRadius:5,borderColor:'lightgray',margin:5}}
                     />
                   </View>
                   {errors.userid &&
                   <Text style={{ fontSize: 10, color: 'red',marginLeft: 30 }}> * {errors.userid}</Text>
                }
-               <Text style={{color:'white',marginLeft:10}}>Password</Text>
                   <View
                     style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      width: 250,
-                      backgroundColor: 'white',
-                      margin: 10,
-                      borderRadius: 5,
+              
                     }}>
                     <TextInput
                       value={values.password}
-                      placeholder="Enter password"
+                      placeholder=" Password"
                       onChangeText={text => {
                         setFieldValue('password', text);
                       }}
+                      style={{borderWidth:2,borderRadius:5,borderColor:'lightgray',margin:5}}
                     />
-                    <MaterialIcons name="lock-outline" size={20} style={{margin: 10}} />
                   </View>
                   {errors.password &&
                   <Text style={{ fontSize: 10, color: 'red',marginLeft: 30 }}> * {errors.password}</Text>
                }
                   <TouchableOpacity
                     style={{
-                      backgroundColor: COLORS.white,
+                      backgroundColor: COLORS.theme,
                       borderRadius: 5,
                       padding: 10,
-                      width: 100,
+                      width: 250,
                       alignSelf: 'center',
                       marginTop: 20,
                     }}
                     onPress={() => {
                       handleSubmit();
                     }}>
-                    <Text style={{alignSelf: 'center', color: COLORS.blue,fontWeight:'bold'}}>
-                      Sign In
+                    <Text style={{alignSelf: 'center', color: COLORS.white,fontWeight:'bold'}}>
+                     Login
                     </Text>
                   </TouchableOpacity>
-                 <TouchableOpacity style={{alignSelf: 'flex-end', margin: 10,marginTop:30}}
+                 <TouchableOpacity style={{alignSelf: 'center', margin: 10,marginTop:10}}
                  onPress={()=>{
 
                  }}>
+                  <View style={{flexDirection:'row'}}>
+                  <MaterialIcons name="lock" size={20} style={{margin: 10}} />
                   <Text
-                    style={{color: 'white',alignSelf: 'center', }}>
+                    style={{color: COLORS.theme,alignSelf: 'center', }}>
                     Forgot Password ?
                   </Text>
+                  </View>
                   </TouchableOpacity>
                   {/* <View style={{flexDirection: 'row'}}>
                     <Text
