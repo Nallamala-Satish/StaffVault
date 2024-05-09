@@ -73,10 +73,10 @@ const Login = withGlobalize(
             </View>
         <Formik
           initialValues={LoginFormInitialValues(props)}
-          validationSchema={LoginFormValidator}
+          // validationSchema={LoginFormValidator}
           onSubmit={(values, {resetForm}) => {
             console.log(values);
-            // navigation.navigate('MainRoute');
+            navigation.navigate('MainRoute');
             // Login(values, resetForm());
           }}>
           {({
@@ -117,7 +117,7 @@ const Login = withGlobalize(
                     />
                   </View>
                   {errors.userid &&
-                  <Text style={{ fontSize: 10, color: 'red',marginLeft: 30 }}> * {errors.userid}</Text>
+                  <Text style={{ fontSize: 10, color: 'red',marginLeft: 10 }}> * {errors.userid}</Text>
                }
                   <View
                     style={{
@@ -133,7 +133,7 @@ const Login = withGlobalize(
                     />
                   </View>
                   {errors.password &&
-                  <Text style={{ fontSize: 10, color: 'red',marginLeft: 30 }}> * {errors.password}</Text>
+                  <Text style={{ fontSize: 10, color: 'red',marginLeft: 10 }}> * {errors.password}</Text>
                }
                   <TouchableOpacity
                     style={{
