@@ -10,6 +10,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import { COLORS } from '../Constants/Color';
 import Shifts from '../Screens/Shifts';
 import Schedule from '../Screens/Schedule';
+import TopTabs from './TopTabs';
 
 
 const Tab = createBottomTabNavigator();
@@ -67,7 +68,7 @@ const BottomTabs = () => {
       />
       <Tab.Screen
         name="Schedule"
-        component={Schedule}
+        component={TopTabs}
         options={{
           tabBarIcon: ({focused}) => {
             return (

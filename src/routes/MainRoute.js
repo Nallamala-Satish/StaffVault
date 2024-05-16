@@ -6,6 +6,7 @@ import DrawerNavigation from './DrawerNavigation';
 import BottomTabs from './BottomTabs';
 import JobDetails from '../Screens/JobDetails';
 import FacilityDetails from '../Screens/FacilityDetails';
+import Calender from '../Screens/Calender';
 
 
 const Stack = createStackNavigator();
@@ -17,6 +18,7 @@ const MainRoute = () => {
       <Stack.Screen name={'BottomTabs'} component={BottomTabs} />
       <Stack.Screen name={'JobDetails'} component={JobDetails} />
       <Stack.Screen name={'FacilityDetails'} component={FacilityDetails} />
+      <Stack.Screen name={'Calender'} component={Calender} />
     </Stack.Navigator>
   );
 };
