@@ -60,14 +60,14 @@ const Login = withGlobalize(
       <LinearGradient colors={[COLORS.blue,  COLORS.white]} start={{x: 0.5, y: 0.5}} end={{x: 2, y: 2}} style={{flex:1}}>
         <Loader loading={loading}></Loader>
 
-        <View style={{marginTop:100,marginLeft:10}}>
+        <View style={{marginTop:100,marginLeft:10,}}>
            <Image
                 source={require('../assets/logo.png')}
                 style={{
                     width: 200 ,
                     height: 50,
                     margin:20,
-           
+                    borderRadius:5
                 }}
             />
             </View>

@@ -11,11 +11,12 @@ export const COLORS = {
     green: '#2FA34D',
     lightGreen : '#dcf8c6',
     yellow:'yellow',
-    orange:'#FF5501',
-    blue:'#0d44af',
+    orange:'#FF2727',
+    blue:'#2051E5',
     liteBlack : '#0e293547',
     gradient : ['#268281','#779f92','#a2af9c'],
     violet :'#8B5ABB',
-    red:'red'
+    red:'red',
+    skyblue:'#EEF2FF'
 
 }
