@@ -8,7 +8,6 @@ import JobDetails from '../Screens/JobDetails';
 import FacilityDetails from '../Screens/FacilityDetails';
 import Calender from '../Screens/Calender';
 
-
 const Stack = createStackNavigator();
 
 const MainRoute = () => {

@@ -1,4 +1,4 @@
-import {View, Text, TextInput, TouchableOpacity,Image} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
 import React, {useState, memo} from 'react';
 import api from '../api';
 import IntlProvider from '../Constants/IntlProvider';
@@ -57,20 +57,24 @@ const Login = withGlobalize(
     };
 
     return (
-      <LinearGradient colors={[COLORS.blue,  COLORS.white]} start={{x: 0.5, y: 0.5}} end={{x: 2, y: 2}} style={{flex:1}}>
+      <LinearGradient
+        colors={[COLORS.blue, COLORS.white]}
+        start={{x: 0.5, y: 0.5}}
+        end={{x: 2, y: 2}}
+        style={{flex: 1}}>
         <Loader loading={loading}></Loader>
 
-        <View style={{marginTop:100,marginLeft:10,}}>
-           <Image
-                source={require('../assets/logo.png')}
-                style={{
-                    width: 200 ,
-                    height: 50,
-                    margin:20,
-                    borderRadius:5
-                }}
-            />
-            </View>
+        <View style={{marginTop: 100, marginLeft: 10}}>
+          <Image
+            source={require('../assets/logo.png')}
+            style={{
+              width: 200,
+              height: 50,
+              margin: 20,
+              borderRadius: 5,
+            }}
+          />
+        </View>
         <Formik
           initialValues={LoginFormInitialValues(props)}
           // validationSchema={LoginFormValidator}
@@ -100,12 +104,14 @@ const Login = withGlobalize(
                     padding: 10,
                     backgroundColor: COLORS.white,
                     alignSelf: 'center',
-                    width:300
+                    width: 300,
                   }}>
-                    <Text style={{color:'gray',margin:10}}>Login to your account</Text>
+                  <Text style={{color: 'gray', margin: 10}}>
+                    Login to your account
+                  </Text>
                   <View
                     style={{
-                      marginTop:20
+                      marginTop: 20,
                     }}>
                     <TextInput
                       value={values.userid}
@@ -113,28 +119,41 @@ const Login = withGlobalize(
                       onChangeText={text => {
                         setFieldValue('userid', text);
                       }}
-                      style={{borderWidth:2,borderRadius:5,borderColor:'lightgray',margin:5}}
+                      style={{
+                        borderWidth: 2,
+                        borderRadius: 5,
+                        borderColor: 'lightgray',
+                        margin: 5,
+                      }}
                     />
                   </View>
-                  {errors.userid &&
-                  <Text style={{ fontSize: 10, color: 'red',marginLeft: 10 }}> * {errors.userid}</Text>
-               }
-                  <View
-                    style={{
-              
-                    }}>
+                  {errors.userid && (
+                    <Text style={{fontSize: 10, color: 'red', marginLeft: 10}}>
+                      {' '}
+                      * {errors.userid}
+                    </Text>
+                  )}
+                  <View style={{}}>
                     <TextInput
                       value={values.password}
                       placeholder=" Password"
                       onChangeText={text => {
                         setFieldValue('password', text);
                       }}
-                      style={{borderWidth:2,borderRadius:5,borderColor:'lightgray',margin:5}}
+                      style={{
+                        borderWidth: 2,
+                        borderRadius: 5,
+                        borderColor: 'lightgray',
+                        margin: 5,
+                      }}
                     />
                   </View>
-                  {errors.password &&
-                  <Text style={{ fontSize: 10, color: 'red',marginLeft: 10 }}> * {errors.password}</Text>
-               }
+                  {errors.password && (
+                    <Text style={{fontSize: 10, color: 'red', marginLeft: 10}}>
+                      {' '}
+                      * {errors.password}
+                    </Text>
+                  )}
                   <TouchableOpacity
                     style={{
                       backgroundColor: COLORS.theme,
@@ -147,21 +166,28 @@ const Login = withGlobalize(
                     onPress={() => {
                       handleSubmit();
                     }}>
-                    <Text style={{alignSelf: 'center', color: COLORS.white,fontWeight:'bold'}}>
-                     Login
+                    <Text
+                      style={{
+                        alignSelf: 'center',
+                        color: COLORS.white,
+                        fontWeight: 'bold',
+                      }}>
+                      Login
                     </Text>
                   </TouchableOpacity>
-                 <TouchableOpacity style={{alignSelf: 'center', margin: 10,marginTop:10}}
-                 onPress={()=>{
-
-                 }}>
-                  <View style={{flexDirection:'row'}}>
-                  <MaterialIcons name="lock" size={20} style={{margin: 10}} />
-                  <Text
-                    style={{color: COLORS.theme,alignSelf: 'center', }}>
-                    Forgot Password ?
-                  </Text>
-                  </View>
+                  <TouchableOpacity
+                    style={{alignSelf: 'center', margin: 10, marginTop: 10}}
+                    onPress={() => {}}>
+                    <View style={{flexDirection: 'row'}}>
+                      <MaterialIcons
+                        name="lock"
+                        size={20}
+                        style={{margin: 10}}
+                      />
+                      <Text style={{color: COLORS.theme, alignSelf: 'center'}}>
+                        Forgot Password ?
+                      </Text>
+                    </View>
                   </TouchableOpacity>
                   {/* <View style={{flexDirection: 'row'}}>
                     <Text
@@ -188,7 +214,6 @@ const Login = withGlobalize(
             </>
           )}
         </Formik>
-      
       </LinearGradient>
     );
   }),

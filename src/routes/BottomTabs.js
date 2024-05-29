@@ -1,16 +1,20 @@
 import * as React from 'react';
-import{View,Text,Image} from 'react-native'
+import {View, Text, Image} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import Home from '../Screens/Home';
 import Profile from '../Screens/Profile';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import { COLORS } from '../Constants/Color';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {COLORS} from '../Constants/Color';
 import Shifts from '../Screens/Shifts';
 import Schedule from '../Screens/Schedule';
 import TopTabs from './TopTabs';
+import Notifications from '../Screens/Notifications';
+import Message from '../Screens/Message';
+
+
 
 
 const Tab = createBottomTabNavigator();
@@ -23,11 +27,12 @@ const BottomTabs = () => {
         tabBarStyle: {
           backgroundColor: COLORS.white,
           height: 50,
-         borderTopStartRadius:10,borderTopEndRadius:10
+          borderTopStartRadius: 10,
+          borderTopEndRadius: 10,
         },
-        tabBarActiveTintColor: COLORS.violet,
+        tabBarActiveTintColor: COLORS.blue,
         // tabBarLabelStyle: {fontSize: 12},
-        tabBarInactiveTintColor: COLORS.black,
+        // tabBarInactiveTintColor: COLORS.black,
         tabBarActiveBackgroundColor: COLORS.white,
       }}>
       <Tab.Screen
@@ -39,27 +44,12 @@ const BottomTabs = () => {
               <MaterialCommunityIcons
                 name="home-variant-outline"
                 style={[
-                  {fontSize: 20, color: COLORS.black},
-                  focused && {tintColor: COLORS.violet, fontSize: 25, color: COLORS.violet,},
-                ]}
-              />
-            );
-          },
-        }}
-      
-      />
-       <Tab.Screen
-        name="Shifts"
-        component={Shifts}
-        options={{
-          tabBarIcon: ({focused}) => {
-            return (
-              <FontAwesome6
-                name="briefcase-medical"
-                style={[
-                  {fontSize: 25, color: COLORS.black},
-                  focused && {tintColor: COLORS.violet, fontSize: 25, color: COLORS.violet,},
-                
+                  {fontSize: 20, },
+                  focused && {
+                    tintColor: COLORS.blue,
+                    fontSize: 25,
+                    color: COLORS.blue,
+                  },
                 ]}
               />
             );
@@ -67,6 +57,69 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
+        name="Messages"
+        component={Message}
+        options={{
+          tabBarIcon: ({focused}) => {
+            return (
+              <Ionicons
+                name="chatbubble-ellipses-outline"
+                style={[
+                  {fontSize: 25, },
+                  focused && {
+                    tintColor: COLORS.blue,
+                    fontSize: 25,
+                    color: COLORS.blue,
+                  },
+                ]}
+              />
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Shifts"
+        component={Shifts}
+        options={{
+          tabBarIcon: ({focused}) => {
+            return (
+              <MaterialIcons
+                name="calendar-month"
+                style={[
+                  {fontSize: 25, },
+                  focused && {
+                    tintColor: COLORS.blue,
+                    fontSize: 25,
+                    color: COLORS.blue,
+                  },
+                ]}
+              />
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Notifications"
+        component={Notifications}
+        options={{
+          tabBarIcon: ({focused}) => {
+            return (
+              <Ionicons
+                name="notifications"
+                style={[
+                  {fontSize: 25,},
+                  focused && {
+                    tintColor: COLORS.blue,
+                    fontSize: 25,
+                    color: COLORS.blue,
+                  },
+                ]}
+              />
+            );
+          },
+        }}
+      />
+      {/* <Tab.Screen
         name="Schedule"
         component={TopTabs}
         options={{
@@ -76,8 +129,11 @@ const BottomTabs = () => {
                 name="calendar-month"
                 style={[
                   {fontSize: 25, color: COLORS.black},
-                  focused && {tintColor: COLORS.violet, fontSize: 25, color: COLORS.violet,},
-                
+                  focused && {
+                    tintColor: COLORS.violet,
+                    fontSize: 25,
+                    color: COLORS.violet,
+                  },
                 ]}
               />
             );
@@ -95,13 +151,17 @@ const BottomTabs = () => {
                 name="user"
                 style={[
                   {fontSize: 25, color: COLORS.black},
-                  focused && {tintColor: COLORS.violet, fontSize: 25, color: COLORS.violet},
+                  focused && {
+                    tintColor: COLORS.violet,
+                    fontSize: 25,
+                    color: COLORS.violet,
+                  },
                 ]}
               />
             );
           },
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 };
