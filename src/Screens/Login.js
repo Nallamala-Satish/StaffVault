@@ -1,4 +1,4 @@
-import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, Image,ImageBackground} from 'react-native';
 import React, {useState, memo} from 'react';
 import api from '../api';
 import IntlProvider from '../Constants/IntlProvider';
@@ -57,11 +57,14 @@ const Login = withGlobalize(
     };
 
     return (
-      <LinearGradient
-        colors={[COLORS.blue, COLORS.white]}
-        start={{x: 0.5, y: 0.5}}
-        end={{x: 2, y: 2}}
-        style={{flex: 1}}>
+      // <LinearGradient
+      //   colors={[COLORS.blue, COLORS.white]}
+      //   start={{x: 0.5, y: 0.5}}
+      //   end={{x: 2, y: 2}}
+      //   style={{flex: 1}}>
+      <ImageBackground
+      source={require('../assets/backgroundImage.png')}
+      style={{flex:1}}>
         <Loader loading={loading}></Loader>
 
         <View style={{marginTop: 100, marginLeft: 10}}>
@@ -214,7 +217,8 @@ const Login = withGlobalize(
             </>
           )}
         </Formik>
-      </LinearGradient>
+        </ImageBackground>
+      // </LinearGradient>
     );
   }),
 );

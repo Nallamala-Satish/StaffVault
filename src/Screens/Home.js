@@ -233,14 +233,22 @@ const Home = () => {
                   borderRadius: 10,
                   width: '49%',
                 }}>
+                   <Text
+                  style={{
+                    color: COLORS.black,
+                    marginLeft: 10,
+                  }}>
+                  Check In
+                </Text>
                 <Text
                   style={{
                     color: COLORS.black,
                     fontWeight: 'bold',
                     fontSize: 20,
                     marginLeft: 10,
+                    padding:10
                   }}>
-                  05
+                  08:30 am
                 </Text>
                 <View
                   style={{
@@ -248,13 +256,14 @@ const Home = () => {
                     justifyContent: 'space-between',
                     margin: 5,
                   }}>
-                  <Text style={{color: COLORS.blue}}>Shifts Requests</Text>
-                  <AntDesign
+                  <Text style={{}}>On time</Text>
+                  <Text style={{}}>+150 pt</Text>
+                  {/* <AntDesign
                     name="arrowright"
                     color={COLORS.blue}
                     size={15}
                     style={{alignSelf: 'center'}}
-                  />
+                  /> */}
                 </View>
               </View>
               <View
@@ -264,14 +273,22 @@ const Home = () => {
                   borderRadius: 10,
                   width: '49%',
                 }}>
+                   <Text
+                  style={{
+                    color: COLORS.black,
+                    marginLeft: 10,
+                  }}>
+                  Check Out
+                </Text>
                 <Text
                   style={{
                     color: COLORS.black,
                     fontWeight: 'bold',
                     fontSize: 20,
                     marginLeft: 10,
+                    padding:10
                   }}>
-                  80
+                  05:10 pm
                 </Text>
                 <View
                   style={{
@@ -279,13 +296,9 @@ const Home = () => {
                     justifyContent: 'space-between',
                     margin: 5,
                   }}>
-                  <Text style={{color: COLORS.blue}}>Worked Requests</Text>
-                  <AntDesign
-                    name="arrowright"
-                    color={COLORS.blue}
-                    size={15}
-                    style={{alignSelf: 'center'}}
-                  />
+                  <Text style={{}}>On time</Text>
+                  <Text style={{}}>+100 pt</Text>
+                 
                 </View>
               </View>
             </View>
@@ -302,14 +315,22 @@ const Home = () => {
                   borderRadius: 10,
                   width: '49%',
                 }}>
+                   <Text
+                  style={{
+                    color: COLORS.black,
+                    marginLeft: 10,
+                  }}>
+                  Start Overtime
+                </Text>
                 <Text
                   style={{
-                    color: COLORS.red,
+                    color: COLORS.black,
                     fontWeight: 'bold',
                     fontSize: 20,
                     marginLeft: 10,
+                    padding:10
                   }}>
-                  10
+                  06:01 pm
                 </Text>
                 <View
                   style={{
@@ -317,13 +338,9 @@ const Home = () => {
                     justifyContent: 'space-between',
                     margin: 5,
                   }}>
-                  <Text style={{color: COLORS.blue}}>Cancelled Requests</Text>
-                  <AntDesign
-                    name="arrowright"
-                    color={COLORS.blue}
-                    size={15}
-                    style={{alignSelf: 'center'}}
-                  />
+                  <Text style={{}}>Project revision from...</Text>
+                  {/* <Text style={{}}>+100 pt</Text> */}
+                 
                 </View>
               </View>
               <View
@@ -333,14 +350,22 @@ const Home = () => {
                   borderRadius: 10,
                   width: '49%',
                 }}>
+                   <Text
+                  style={{
+                    color: COLORS.black,
+                    marginLeft: 10,
+                  }}>
+                  Start Overtime
+                </Text>
                 <Text
                   style={{
                     color: COLORS.black,
                     fontWeight: 'bold',
                     fontSize: 20,
                     marginLeft: 10,
+                    padding:10
                   }}>
-                  02
+                  06:01 pm
                 </Text>
                 <View
                   style={{
@@ -348,13 +373,9 @@ const Home = () => {
                     justifyContent: 'space-between',
                     margin: 5,
                   }}>
-                  <Text style={{color: COLORS.blue}}>Scheduled Requests</Text>
-                  <AntDesign
-                    name="arrowright"
-                    color={COLORS.blue}
-                    size={15}
-                    style={{alignSelf: 'center'}}
-                  />
+                  <Text style={{}}>6h 00m</Text>
+                  <Text style={{}}>+$120.00</Text>
+                 
                 </View>
               </View>
             </View>
