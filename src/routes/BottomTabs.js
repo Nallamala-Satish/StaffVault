@@ -13,6 +13,8 @@ import Schedule from '../Screens/Schedule';
 import TopTabs from './TopTabs';
 import Notifications from '../Screens/Notifications';
 import Message from '../Screens/Message';
+import Menu from '../Screens/Menu';
+import Calender from '../Screens/Calender';
 
 
 
@@ -78,8 +80,8 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Shifts"
-        component={Shifts}
+        name="Calender"
+        component={Calender}
         options={{
           tabBarIcon: ({focused}) => {
             return (
@@ -99,13 +101,13 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={Notifications}
+        name="Menu"
+        component={Menu}
         options={{
           tabBarIcon: ({focused}) => {
             return (
               <Ionicons
-                name="notifications"
+                name="menu"
                 style={[
                   {fontSize: 25,},
                   focused && {

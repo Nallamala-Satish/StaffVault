@@ -13,9 +13,11 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CircularProgress from 'react-native-circular-progress-indicator';
 import moment from 'moment';
+import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
   const scrollViewRef = useRef();
+  const navigation = useNavigation()
   const TotalData = 1000;
   const ChunkSize = 10;
   const [selectedDate, setSelectedDate] = useState('Today');
@@ -134,11 +136,11 @@ const Home = () => {
         <View style={{alignSelf: 'center', flexDirection: 'row'}}>
           <TouchableOpacity
             onPress={() => {
-              alert('under develop');
+            navigation.navigate('TopTabs');
             }}>
-            <EvilIcons name="bell" size={25} color={COLORS.white} />
+            <EvilIcons name="bell" size={30} color={COLORS.white} />
           </TouchableOpacity>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => {
               alert('under develop');
             }}>
@@ -146,7 +148,7 @@ const Home = () => {
               source={require('../assets/menu.png')}
               style={{marginLeft: 20, marginRight: 10}}
             />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
       <ScrollView>
@@ -204,9 +206,9 @@ const Home = () => {
             Select Date
           </Text>
           <View style={{alignSelf: 'center'}}>
-            <View style={styles.centered}>
+            {/* <View style={styles.centered}>
               <Text style={styles.title}>{currentMonth}</Text>
-            </View>
+            </View> */}
             <View style={styles.dateSection}>
               <View style={styles.scroll}>
                 <ScrollView

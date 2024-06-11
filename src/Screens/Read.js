@@ -3,8 +3,8 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { COLORS } from '../Constants/Color';
 
-const All = () => {
-  const navigation = useNavigation()
+const Read = () => {
+    const navigation = useNavigation()
   const data=[
     {id:1,message:'John deo wants to donate blood',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'20 days ago'},
     {id:2,message:'John deo wants to donate blood',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'30 days ago'},
@@ -30,15 +30,15 @@ const All = () => {
 
   return (
     <View style={{flex:1,backgroundColor:COLORS.white}}>
-      <View style={{flex:1}}>
-          <FlatList
-          data={data}
-          renderItem={Item}
-          keyExtractor={item =>item.id}
-          />   
-      </View>
+    <View style={{flex:1}}>
+        <FlatList
+        data={data}
+        renderItem={Item}
+        keyExtractor={item =>item.id}
+        />   
     </View>
+  </View>
   );
 };
 
-export default All;
+export default Read;
