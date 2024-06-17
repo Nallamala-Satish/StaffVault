@@ -11,6 +11,9 @@ import Notifications from '../Screens/Notifications';
 import ScheduleInfo from '../Screens/ScheduleInfo';
 import Message1 from '../Screens/Message1';
 import TopTabs from './TopTabs';
+import NotificationDetails from '../Screens/NotificationDetails';
+import Documents from '../Screens/Documents';
+import ClinicProfile from '../Screens/ClinicProfile';
 
 const Stack = createStackNavigator();
 
@@ -26,6 +29,9 @@ const MainRoute = () => {
       <Stack.Screen name={'Calender'} component={Calender} />
       <Stack.Screen name={'ScheduleInfo'} component={ScheduleInfo} />
       <Stack.Screen name={'Message1'} component={Message1} />
+      <Stack.Screen name={'NotificationDetails'} component={NotificationDetails} />
+      <Stack.Screen name={'Documents'} component={Documents} />
+      <Stack.Screen name={'ClinicProfile'} component={ClinicProfile} />
     </Stack.Navigator>
   );
 };

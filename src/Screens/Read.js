@@ -17,7 +17,9 @@ const Read = () => {
   const Item = ({item})=>{
     return(
       <View style={{margin:5}}>
-        <TouchableOpacity onPress={()=>{}}
+        <TouchableOpacity onPress={()=>{
+           navigation.navigate('NotificationDetails',{item:item})
+        }}
           style={{padding:5}}>
           <Text style={{color:COLORS.black,fontWeight:'bold'}}>{item.message}</Text>
           <Text>{item.details}</Text>

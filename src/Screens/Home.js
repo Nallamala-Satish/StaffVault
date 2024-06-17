@@ -153,7 +153,7 @@ const Home = () => {
       </View>
       <ScrollView>
         <View style={{flex: 1}}>
-          <View
+          {/* <View
             style={{
               padding: 10,
               flexDirection: 'row',
@@ -204,12 +204,12 @@ const Home = () => {
               marginLeft: 20,
             }}>
             Select Date
-          </Text>
+          </Text> */}
           <View style={{alignSelf: 'center'}}>
             {/* <View style={styles.centered}>
               <Text style={styles.title}>{currentMonth}</Text>
             </View> */}
-            <View style={styles.dateSection}>
+            {/* <View style={styles.dateSection}>
               <View style={styles.scroll}>
                 <ScrollView
                   ref={scrollViewRef}
@@ -221,6 +221,63 @@ const Home = () => {
                   {dates}
                 </ScrollView>
               </View>
+            </View> */}
+           <View style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                margin: 10,
+              }}>
+              <TouchableOpacity
+                style={{
+                  padding: 20,
+                  backgroundColor: COLORS.skyblue,
+                  borderRadius: 10,
+                  width: '45%',
+                }} onPress={()=>{
+                  navigation.navigate('Documents')
+                }}>
+                  <Image
+                  source={require('../assets/home.png')}
+                  style={{alignSelf:'center'}}
+                  />
+                <Text
+                  style={{
+                    color: COLORS.black,
+                    fontWeight: 'bold',
+                    fontSize: 20,
+                    padding:10,
+                    alignSelf:'center'
+                  }}>
+                 2/10
+                </Text>
+              
+                  <Text style={{alignSelf:'center'}}>Documents {'\n'}Required</Text>
+               </TouchableOpacity>
+                  
+               <TouchableOpacity
+                style={{
+                  padding: 20,
+                  backgroundColor: COLORS.skyblue,
+                  borderRadius: 10,
+                  width: '45%',
+                }}>
+                  <Image
+                  source={require('../assets/home.png')}
+                  style={{alignSelf:'center'}}
+                  />
+                <Text
+                  style={{
+                    color: COLORS.black,
+                    fontWeight: 'bold',
+                    fontSize: 20,
+                    padding:10,
+                    alignSelf:'center'
+                  }}>
+                 05
+                </Text>
+              
+                  <Text style={{alignSelf:'center'}}>Shift Requests</Text>
+               </TouchableOpacity>
             </View>
             <View
               style={{
@@ -228,158 +285,54 @@ const Home = () => {
                 justifyContent: 'space-between',
                 margin: 10,
               }}>
-              <View
+             <TouchableOpacity
                 style={{
-                  padding: 10,
+                  padding: 20,
                   backgroundColor: COLORS.skyblue,
                   borderRadius: 10,
-                  width: '49%',
+                  width: '45%',
                 }}>
-                   <Text
-                  style={{
-                    color: COLORS.black,
-                    marginLeft: 10,
-                  }}>
-                  Check In
-                </Text>
+                  <Image
+                  source={require('../assets/home.png')}
+                  style={{alignSelf:'center'}}
+                  />
                 <Text
                   style={{
                     color: COLORS.black,
                     fontWeight: 'bold',
                     fontSize: 20,
-                    marginLeft: 10,
-                    padding:10
+                    padding:10,
+                    alignSelf:'center'
                   }}>
-                  08:30 am
+                 02
                 </Text>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    margin: 5,
-                  }}>
-                  <Text style={{}}>On time</Text>
-                  <Text style={{}}>+150 pt</Text>
-                  {/* <AntDesign
-                    name="arrowright"
-                    color={COLORS.blue}
-                    size={15}
-                    style={{alignSelf: 'center'}}
-                  /> */}
-                </View>
-              </View>
-              <View
+              
+                  <Text style={{alignSelf:'center'}}>Meets & Greets</Text>
+               </TouchableOpacity>
+               <TouchableOpacity
                 style={{
-                  padding: 10,
+                  padding: 20,
                   backgroundColor: COLORS.skyblue,
                   borderRadius: 10,
-                  width: '49%',
+                  width: '45%',
                 }}>
-                   <Text
-                  style={{
-                    color: COLORS.black,
-                    marginLeft: 10,
-                  }}>
-                  Check Out
-                </Text>
+                  <Image
+                  source={require('../assets/home.png')}
+                  style={{alignSelf:'center'}}
+                  />
                 <Text
                   style={{
                     color: COLORS.black,
                     fontWeight: 'bold',
                     fontSize: 20,
-                    marginLeft: 10,
-                    padding:10
+                    padding:10,
+                    alignSelf:'center'
                   }}>
-                  05:10 pm
+                 03
                 </Text>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    margin: 5,
-                  }}>
-                  <Text style={{}}>On time</Text>
-                  <Text style={{}}>+100 pt</Text>
-                 
-                </View>
-              </View>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                margin: 10,
-              }}>
-              <View
-                style={{
-                  padding: 10,
-                  backgroundColor: COLORS.skyblue,
-                  borderRadius: 10,
-                  width: '49%',
-                }}>
-                   <Text
-                  style={{
-                    color: COLORS.black,
-                    marginLeft: 10,
-                  }}>
-                  Start Overtime
-                </Text>
-                <Text
-                  style={{
-                    color: COLORS.black,
-                    fontWeight: 'bold',
-                    fontSize: 20,
-                    marginLeft: 10,
-                    padding:10
-                  }}>
-                  06:01 pm
-                </Text>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    margin: 5,
-                  }}>
-                  <Text style={{}}>Project revision from...</Text>
-                  {/* <Text style={{}}>+100 pt</Text> */}
-                 
-                </View>
-              </View>
-              <View
-                style={{
-                  padding: 10,
-                  backgroundColor: COLORS.skyblue,
-                  borderRadius: 10,
-                  width: '49%',
-                }}>
-                   <Text
-                  style={{
-                    color: COLORS.black,
-                    marginLeft: 10,
-                  }}>
-                  Start Overtime
-                </Text>
-                <Text
-                  style={{
-                    color: COLORS.black,
-                    fontWeight: 'bold',
-                    fontSize: 20,
-                    marginLeft: 10,
-                    padding:10
-                  }}>
-                  06:01 pm
-                </Text>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    margin: 5,
-                  }}>
-                  <Text style={{}}>6h 00m</Text>
-                  <Text style={{}}>+$120.00</Text>
-                 
-                </View>
-              </View>
+              
+                  <Text style={{alignSelf:'center'}}>Today's Patient Schedules</Text>
+               </TouchableOpacity>
             </View>
           </View>
           <Text

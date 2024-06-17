@@ -29,6 +29,8 @@ export const LoginFormValidator = () => {
 const Login = withGlobalize(
   memo(props => {
     const [loading, setLoading] = useState(false);
+    const [email,setEmail] = useState('')
+    const [password,setPassword] =  useState('')
     const intl = IntlProvider(props);
     const navigation = useNavigation();
 
@@ -62,104 +64,198 @@ const Login = withGlobalize(
       //   start={{x: 0.5, y: 0.5}}
       //   end={{x: 2, y: 2}}
       //   style={{flex: 1}}>
-      <ImageBackground
-      source={require('../assets/backgroundImage.png')}
-      style={{flex:1}}>
-        <Loader loading={loading}></Loader>
+      // <ImageBackground
+      // source={require('../assets/backgroundImage.png')}
+      // style={{flex:1}}>
+      //   <Loader loading={loading}></Loader>
 
-        <View style={{marginTop: 100, marginLeft: 10}}>
-          <Image
-            source={require('../assets/logo.png')}
-            style={{
-              width: 200,
-              height: 50,
-              margin: 20,
-              borderRadius: 5,
-            }}
-          />
-        </View>
-        <Formik
-          initialValues={LoginFormInitialValues(props)}
-          // validationSchema={LoginFormValidator}
-          onSubmit={(values, {resetForm}) => {
-            console.log(values);
-            navigation.navigate('MainRoute');
-            // Login(values, resetForm());
-          }}>
-          {({
-            values,
-            handleChange,
-            setFieldValue,
-            errors,
-            touched,
-            setFieldTouched,
-            isValid,
-            handleSubmit,
-          }) => (
-            <>
-              <View
-                style={{
-                  justifyContent: 'center',
-                  // flex: 1,
-                }}>
-                <Card
-                  style={{
-                    padding: 10,
-                    backgroundColor: COLORS.white,
-                    alignSelf: 'center',
-                    width: 300,
-                  }}>
-                  <Text style={{color: 'gray', margin: 10}}>
-                    Login to your account
-                  </Text>
-                  <View
-                    style={{
-                      marginTop: 20,
-                    }}>
-                    <TextInput
-                      value={values.userid}
-                      placeholder=" Login ID "
+      //   <View style={{marginTop: 100, marginLeft: 10}}>
+      //     <Image
+      //       source={require('../assets/logo.png')}
+      //       style={{
+      //         width: 200,
+      //         height: 50,
+      //         margin: 20,
+      //         borderRadius: 5,
+      //       }}
+      //     />
+      //   </View>
+      //   <Formik
+      //     initialValues={LoginFormInitialValues(props)}
+      //     // validationSchema={LoginFormValidator}
+      //     onSubmit={(values, {resetForm}) => {
+      //       console.log(values);
+      //       navigation.navigate('MainRoute');
+      //       // Login(values, resetForm());
+      //     }}>
+      //     {({
+      //       values,
+      //       handleChange,
+      //       setFieldValue,
+      //       errors,
+      //       touched,
+      //       setFieldTouched,
+      //       isValid,
+      //       handleSubmit,
+      //     }) => (
+      //       <>
+      //         <View
+      //           style={{
+      //             justifyContent: 'center',
+      //             // flex: 1,
+      //           }}>
+      //           <Card
+      //             style={{
+      //               padding: 10,
+      //               backgroundColor: COLORS.white,
+      //               alignSelf: 'center',
+      //               width: 300,
+      //             }}>
+      //             <Text style={{color: 'gray', margin: 10}}>
+      //               Login to your account
+      //             </Text>
+      //             <View
+      //               style={{
+      //                 marginTop: 20,
+      //               }}>
+      //               <TextInput
+      //                 value={values.userid}
+      //                 placeholder=" Login ID "
+      //                 onChangeText={text => {
+      //                   setFieldValue('userid', text);
+      //                 }}
+      //                 style={{
+      //                   borderWidth: 2,
+      //                   borderRadius: 5,
+      //                   borderColor: 'lightgray',
+      //                   margin: 5,
+      //                 }}
+      //               />
+      //             </View>
+      //             {errors.userid && (
+      //               <Text style={{fontSize: 10, color: 'red', marginLeft: 10}}>
+      //                 {' '}
+      //                 * {errors.userid}
+      //               </Text>
+      //             )}
+      //             <View style={{}}>
+      //               <TextInput
+      //                 value={values.password}
+      //                 placeholder=" Password"
+      //                 onChangeText={text => {
+      //                   setFieldValue('password', text);
+      //                 }}
+      //                 style={{
+      //                   borderWidth: 2,
+      //                   borderRadius: 5,
+      //                   borderColor: 'lightgray',
+      //                   margin: 5,
+      //                 }}
+      //               />
+      //             </View>
+      //             {errors.password && (
+      //               <Text style={{fontSize: 10, color: 'red', marginLeft: 10}}>
+      //                 {' '}
+      //                 * {errors.password}
+      //               </Text>
+      //             )}
+      //             <TouchableOpacity
+      //               style={{
+      //                 backgroundColor: COLORS.theme,
+      //                 borderRadius: 5,
+      //                 padding: 10,
+      //                 width: 250,
+      //                 alignSelf: 'center',
+      //                 marginTop: 20,
+      //               }}
+      //               onPress={() => {
+      //                 handleSubmit();
+      //               }}>
+      //               <Text
+      //                 style={{
+      //                   alignSelf: 'center',
+      //                   color: COLORS.white,
+      //                   fontWeight: 'bold',
+      //                 }}>
+      //                 Login
+      //               </Text>
+      //             </TouchableOpacity>
+      //             <TouchableOpacity
+      //               style={{alignSelf: 'center', margin: 10, marginTop: 10}}
+      //               onPress={() => {}}>
+      //               <View style={{flexDirection: 'row'}}>
+      //                 <MaterialIcons
+      //                   name="lock"
+      //                   size={20}
+      //                   style={{margin: 10}}
+      //                 />
+      //                 <Text style={{color: COLORS.theme, alignSelf: 'center'}}>
+      //                   Forgot Password ?
+      //                 </Text>
+      //               </View>
+      //             </TouchableOpacity>
+      //             {/* <View style={{flexDirection: 'row'}}>
+      //               <Text
+      //                 style={{color: 'white', alignSelf: 'center', margin: 5}}>
+      //                 Don't have an account ?{' '}
+      //               </Text>
+      //               <TouchableOpacity
+      //                 onPress={() => {
+      //                   navigation.navigate('Register');
+      //                 }}>
+      //                 <Text
+      //                   style={{
+      //                     color: 'white',
+      //                     alignSelf: 'center',
+      //                     margin: 5,
+      //                     fontSize: 17,
+      //                   }}>
+      //                   Sign Up
+      //                 </Text>
+      //               </TouchableOpacity>
+      //             </View> */}
+      //           </Card>
+      //         </View>
+      //       </>
+      //     )}
+      //   </Formik>
+      //   </ImageBackground>
+      // </LinearGradient>
+      <View style={{flex:1}}>
+        <Text style={{fontWeight:'bold',color:'black',fontSize:30,marginLeft:10,marginTop:30}}>Welcome</Text>
+        <Text style={{fontWeight:'bold',color:'black',fontSize:30,marginLeft:10}}>back</Text>
+        <Text style={{margin:10}}> Sign in to continue</Text>
+
+                  <View style={{margin:5,marginTop:20}}>
+                  <TextInput
+                      value={email}
+                      placeholder="Enter Email"
                       onChangeText={text => {
-                        setFieldValue('userid', text);
+                           setEmail(text)
                       }}
                       style={{
-                        borderWidth: 2,
                         borderRadius: 5,
-                        borderColor: 'lightgray',
+                        backgroundColor: 'lightgray',
                         margin: 5,
                       }}
                     />
-                  </View>
-                  {errors.userid && (
-                    <Text style={{fontSize: 10, color: 'red', marginLeft: 10}}>
-                      {' '}
-                      * {errors.userid}
-                    </Text>
-                  )}
-                  <View style={{}}>
-                    <TextInput
-                      value={values.password}
+                
+                  <TextInput
+                      value={password}
                       placeholder=" Password"
                       onChangeText={text => {
-                        setFieldValue('password', text);
+                       setPassword(text)
                       }}
                       style={{
-                        borderWidth: 2,
                         borderRadius: 5,
-                        borderColor: 'lightgray',
+                        backgroundColor: 'lightgray',
                         margin: 5,
                       }}
                     />
                   </View>
-                  {errors.password && (
-                    <Text style={{fontSize: 10, color: 'red', marginLeft: 10}}>
-                      {' '}
-                      * {errors.password}
-                    </Text>
-                  )}
-                  <TouchableOpacity
+            <TouchableOpacity
                     style={{
-                      backgroundColor: COLORS.theme,
+                      backgroundColor: COLORS.blue,
                       borderRadius: 5,
                       padding: 10,
                       width: 250,
@@ -167,7 +263,7 @@ const Login = withGlobalize(
                       marginTop: 20,
                     }}
                     onPress={() => {
-                      handleSubmit();
+                      navigation.navigate('MainRoute');
                     }}>
                     <Text
                       style={{
@@ -175,50 +271,18 @@ const Login = withGlobalize(
                         color: COLORS.white,
                         fontWeight: 'bold',
                       }}>
-                      Login
+                      Sign In
                     </Text>
                   </TouchableOpacity>
-                  <TouchableOpacity
-                    style={{alignSelf: 'center', margin: 10, marginTop: 10}}
-                    onPress={() => {}}>
-                    <View style={{flexDirection: 'row'}}>
-                      <MaterialIcons
-                        name="lock"
-                        size={20}
-                        style={{margin: 10}}
-                      />
-                      <Text style={{color: COLORS.theme, alignSelf: 'center'}}>
-                        Forgot Password ?
-                      </Text>
-                    </View>
+                  <View style={{marginTop:10}}>
+                  <TouchableOpacity style={{alignSelf:'center',margin:10}}
+                  onPress={()=>{
+                    navigation.navigate('ForgotPassword')
+                  }}>
+                    <Text style={{alignSelf:'center'}}>Forgot Password ? </Text>
                   </TouchableOpacity>
-                  {/* <View style={{flexDirection: 'row'}}>
-                    <Text
-                      style={{color: 'white', alignSelf: 'center', margin: 5}}>
-                      Don't have an account ?{' '}
-                    </Text>
-                    <TouchableOpacity
-                      onPress={() => {
-                        navigation.navigate('Register');
-                      }}>
-                      <Text
-                        style={{
-                          color: 'white',
-                          alignSelf: 'center',
-                          margin: 5,
-                          fontSize: 17,
-                        }}>
-                        Sign Up
-                      </Text>
-                    </TouchableOpacity>
-                  </View> */}
-                </Card>
-              </View>
-            </>
-          )}
-        </Formik>
-        </ImageBackground>
-      // </LinearGradient>
+               </View>
+      </View>
     );
   }),
 );

@@ -5,8 +5,10 @@ import AntDesign from 'react-native-vector-icons/AntDesign'
 import Feather from 'react-native-vector-icons/Feather'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
+import { useNavigation } from '@react-navigation/native';
 
 const Menu = () => {
+  const navigation = useNavigation()
   return (
     <View style={{flex:1,backgroundColor:COLORS.white}}>
       <Text style={{color:COLORS.black,fontWeight:'bold',fontSize:20,margin:10}}>Menu</Text>
@@ -37,7 +39,8 @@ const Menu = () => {
     <View style={{margin:10}}>
         <Text>Account</Text>
         <View style={{marginTop:10,}}>
-            <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',padding:10}}>
+            <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',padding:10}}
+            onPress={()=>{navigation.navigate('Documents')}}>
                 <View style={{flexDirection:'row',}}>
                   <Feather
                    name='user'
@@ -54,7 +57,8 @@ const Menu = () => {
                 />
              </View>
             </TouchableOpacity>
-            <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',padding:10}}>
+            <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',padding:10}}
+             onPress={()=>{navigation.navigate('TopTabs')}}>
                 <View style={{flexDirection:'row',}}>
                   <Feather
                    name='settings'

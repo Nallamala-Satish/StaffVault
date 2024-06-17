@@ -61,7 +61,9 @@ const TopTabs = () => {
         <Tab.Screen name="Read" component={Read} />
  
       </Tab.Navigator>
-      
+      <View>
+        
+      </View>
     </>
   );
 }
