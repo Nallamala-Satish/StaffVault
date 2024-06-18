@@ -222,9 +222,24 @@ const Login = withGlobalize(
       //   </ImageBackground>
       // </LinearGradient>
       <View style={{flex:1}}>
+    <ImageBackground
+      source={require('../assets/backgroundImage.png')}
+      style={{flex:1,}}>
+         <View style={{marginTop: 50, alignSelf:'center'}}>
+           <Image
+            source={require('../assets/logo.png')}
+            style={{
+              width: 200,
+              height: 50,
+              margin: 20,
+              borderRadius: 5,
+            }}
+          />
+        </View>
+
         <Text style={{fontWeight:'bold',color:'black',fontSize:30,marginLeft:10,marginTop:30}}>Welcome</Text>
         <Text style={{fontWeight:'bold',color:'black',fontSize:30,marginLeft:10}}>back</Text>
-        <Text style={{margin:10}}> Sign in to continue</Text>
+        <Text style={{margin:10,color:'black'}}> Sign in to continue</Text>
 
                   <View style={{margin:5,marginTop:20}}>
                   <TextInput
@@ -279,9 +294,10 @@ const Login = withGlobalize(
                   onPress={()=>{
                     navigation.navigate('ForgotPassword')
                   }}>
-                    <Text style={{alignSelf:'center'}}>Forgot Password ? </Text>
+                    <Text style={{alignSelf:'center',color:'black'}}>Forgot Password ? </Text>
                   </TouchableOpacity>
                </View>
+       </ImageBackground>
       </View>
     );
   }),

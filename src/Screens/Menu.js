@@ -36,7 +36,7 @@ const Menu = () => {
         </View>
     </View>
     <View style={{backgroundColor:'lightgray',height:1,margin:5}}/>
-    <View style={{margin:10}}>
+    <View style={{margin:10,flex:1}}>
         <Text>Account</Text>
         <View style={{marginTop:10,}}>
             <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',padding:10}}
@@ -45,11 +45,12 @@ const Menu = () => {
                   <Feather
                    name='user'
                    size={25}
-                   color={COLORS.black}
+                   color={COLORS.blue}
+                   style={{backgroundColor:'#F0F2F6',borderRadius:5,padding:5}}
                   />
-                  <Text style={{marginLeft:10,color:COLORS.black,alignSelf:'center',fontSize:20}}>Documents</Text>
+                  <Text style={{marginLeft:10,color:COLORS.black,alignSelf:'center',fontSize:20}}>Document Requests</Text>
                 </View>
-                <View>
+                <View style={{alignSelf:'center'}}>
                 <AntDesign
                 name='right'
                 size={20}
@@ -58,16 +59,17 @@ const Menu = () => {
              </View>
             </TouchableOpacity>
             <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',padding:10}}
-             onPress={()=>{navigation.navigate('TopTabs')}}>
+             onPress={()=>{navigation.navigate('Messages')}}>
                 <View style={{flexDirection:'row',}}>
                   <Feather
                    name='settings'
                    size={25}
-                   color={COLORS.black}
+                   color={COLORS.blue}
+                   style={{backgroundColor:'#F0F2F6',borderRadius:5,padding:5}}
                   />
-                  <Text style={{marginLeft:10,color:COLORS.black,alignSelf:'center',fontSize:20}}>Notifications</Text>
+                  <Text style={{marginLeft:10,color:COLORS.black,alignSelf:'center',fontSize:20}}>Messages</Text>
                 </View>
-                <View>
+                <View style={{alignSelf:'center'}}>
                 <AntDesign
                 name='right'
                 size={20}
@@ -75,16 +77,38 @@ const Menu = () => {
                 />
              </View>
             </TouchableOpacity>
-            <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',padding:10}}>
+            <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',padding:10}}
+             onPress={()=>{navigation.navigate('Clients')}}>
                 <View style={{flexDirection:'row',}}>
                   <Feather
                    name='bookmark'
                    size={25}
-                   color={COLORS.black}
+                   color={COLORS.blue}
+                   style={{backgroundColor:'#F0F2F6',borderRadius:5,padding:5}}
+                  />
+                  <Text style={{marginLeft:10,color:COLORS.black,alignSelf:'center',fontSize:20}}>Clients</Text>
+                </View>
+                <View style={{alignSelf:'center'}}>
+                <AntDesign
+                name='right'
+                size={20}
+                color={COLORS.black}
+                />
+             </View>
+            </TouchableOpacity>
+            <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',padding:10}}
+            onPress={()=>{navigation.navigate('TopTabs')}}>
+
+                <View style={{flexDirection:'row',}}>
+                  <Feather
+                   name='bookmark'
+                   size={25}
+                   color={COLORS.blue}
+                   style={{backgroundColor:'#F0F2F6',borderRadius:5,padding:5}}
                   />
                   <Text style={{marginLeft:10,color:COLORS.black,alignSelf:'center',fontSize:20}}>Shift Requests</Text>
                 </View>
-                <View>
+                <View style={{alignSelf:'center'}}>
                 <AntDesign
                 name='right'
                 size={20}
@@ -94,53 +118,20 @@ const Menu = () => {
             </TouchableOpacity>
         </View>
     </View>
-    <View style={{margin:10}}>
-        <Text>General</Text>
-        <View style={{marginTop:10,}}>
-            <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',padding:10}}>
-                <View style={{flexDirection:'row',}}>
-                  <Feather
-                   name='lock'
-                   size={25}
-                   color={COLORS.black}
-                  />
-                  <Text style={{marginLeft:10,color:COLORS.black,alignSelf:'center',fontSize:20}}>Privacy & Policy</Text>
-                </View>
-                <View>
-                <AntDesign
-                name='right'
-                size={20}
-                color={COLORS.black}
-                />
-             </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',padding:10}}>
-                <View style={{flexDirection:'row',}}>
-                  <SimpleLineIcons
-                   name='info'
-                   size={25}
-                   color={COLORS.black}
-                  />
-                  <Text style={{marginLeft:10,color:COLORS.black,alignSelf:'center',fontSize:20}}>Terms & Conditions</Text>
-                </View>
-                <View>
-                <AntDesign
-                name='right'
-                size={20}
-                color={COLORS.black}
-                />
-             </View>
-            </TouchableOpacity>
+
+        <View style={{marginTop:10,marginBottom:10}}>
+           
             <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',padding:10}}>
                 <View style={{flexDirection:'row',}}>
                   <MaterialIcons
                    name='logout'
                    size={25}
-                   color={COLORS.black}
+                   color={COLORS.red}
+                   style={{backgroundColor:'#F0F2F6',borderRadius:5,padding:5}}
                   />
                   <Text style={{marginLeft:10,color:COLORS.black,alignSelf:'center',fontSize:20}}>Logout</Text>
                 </View>
-                <View>
+                <View style={{alignSelf:'center'}}>
                 <AntDesign
                 name='right'
                 size={20}
@@ -149,7 +140,6 @@ const Menu = () => {
              </View>
             </TouchableOpacity>
         </View>
-    </View>
     </View>
   );
 };

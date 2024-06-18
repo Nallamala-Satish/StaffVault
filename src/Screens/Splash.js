@@ -34,15 +34,15 @@ const Splash = withGlobalize(
     }, []);
 
     return (
-      <LinearGradient
-        colors={[COLORS.blue, 'white']}
-        end={{x: 0, y: 1.5}}
-        style={{flex: 1}}>
+      // <LinearGradient
+      //   colors={[COLORS.blue, 'white']}
+      //   end={{x: 0, y: 1.5}}
+      //   style={{flex: 1}}>
         <View
           style={{
             flex: 1,
             justifyContent: 'center',
-            // backgroundColor:COLORS.blue
+            backgroundColor:COLORS.blue
           }}>
           <Image
             source={require('../assets/logo.png')}
@@ -53,7 +53,7 @@ const Splash = withGlobalize(
             }}></Image>
           {/* <Text style={{fontSize:20,alignSelf:'center',fontWeight:'bold'}}>Car Wash</Text> */}
         </View>
-      </LinearGradient>
+      // </LinearGradient>
     );
   }),
 );

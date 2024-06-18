@@ -51,7 +51,7 @@ console.log(item)
       color={COLORS.black}
       />
     </TouchableOpacity>
-    <Text style={{alignSelf:'center',fontSize:20,color:COLORS.black,fontWeight:'bold',marginLeft:10}}>{item && item.message}</Text>
+    <Text style={{alignSelf:'center',fontSize:20,color:COLORS.black,fontWeight:'bold',marginLeft:10}}>Notification Details</Text>
     <TouchableOpacity style={{marginLeft:10}}>
         <Entypo
         name='dots-three-vertical'

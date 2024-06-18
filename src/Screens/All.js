@@ -6,26 +6,36 @@ import { COLORS } from '../Constants/Color';
 const All = () => {
   const navigation = useNavigation()
   const data=[
-    {id:1,message:'John deo wants to donate blood',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'20 days ago'},
-    {id:2,message:'John deo wants to donate blood',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'30 days ago'},
-    {id:3,message:'John deo wants to donate blood',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'20 days ago'},
-    {id:4,message:'John deo wants to donate blood',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'30 days ago'},
-    {id:5,message:'John deo wants to donate blood',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'20 days ago'},
-    {id:6,message:'John deo wants to donate blood',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'30 days ago'}
+    {id:1,message:'Everest healthcare is looking for nursing services for a patient Monday to Friday 9:00 AM to 5:00 PM',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'20 days ago'},
+    {id:2,message:'Everest healthcare is looking for nursing services for a patient Monday to Friday 9:00 AM to 5:00 PM',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'30 days ago'},
+    {id:3,message:'Everest healthcare is looking for nursing services for a patient Monday to Friday 9:00 AM to 5:00 PM',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'20 days ago'},
+    {id:4,message:'Everest healthcare is looking for nursing services for a patient Monday to Friday 9:00 AM to 5:00 PM',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'30 days ago'},
+    {id:5,message:'Everest healthcare is looking for nursing services for a patient Monday to Friday 9:00 AM to 5:00 PM',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'20 days ago'},
+    {id:6,message:'Everest healthcare is looking for nursing services for a patient Monday to Friday 9:00 AM to 5:00 PM',details:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',time:'30 days ago'}
   ]
 
   const Item = ({item})=>{
     return(
-      <View style={{margin:5}}>
+      <View style={{margin:5,backgroundColor:'#EEF4FF',borderRadius:5}}>
         <TouchableOpacity onPress={()=>{
           navigation.navigate('NotificationDetails',{item:item})
         }}
-          style={{padding:5}}>
-          <Text style={{color:COLORS.black,fontWeight:'bold'}}>{item.message}</Text>
-          <Text>{item.details}</Text>
-          <Text>{item.time}</Text>
+          style={{padding:10}}>
+          <Text style={{color:COLORS.black,fontWeight:'500',width:280}}>{item.message}</Text>
+          <Text style={{marginTop:5}}>Zip Code 60504,</Text>
+         <Text>Pay rate: Optional</Text>
+         <Text>Diagnosis/Comments:</Text>
+         <View style={{flexDirection:'row',justifyContent:'space-between'}}>
+         <TouchableOpacity style={{padding:5,backgroundColor:'white',margin:5,padding:10,width:150}}
+         onPress={()=>{}}>
+        <Text style={{alignSelf:'center',color:COLORS.green}}>Accept</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={{padding:5,backgroundColor:'white',margin:5,padding:10,width:150}}
+         onPress={()=>{}}>
+        <Text style={{alignSelf:'center',color:COLORS.red}}>Decline</Text>
+      </TouchableOpacity>
+         </View>
         </TouchableOpacity>
-        <View style={{backgroundColor:'lightgray',height:1,}}/>
       </View>
     )
   }

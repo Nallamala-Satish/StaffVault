@@ -185,7 +185,7 @@ const Calender = () => {
           backgroundColor:
             selected === fullDate || day == selectedDate
               ? COLORS.blue
-              : 'lightgray',
+              : '#F0F2F6',
           borderRadius: 10,
           borderColor: '#ddd',
           padding: 10,

@@ -80,7 +80,7 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Calender"
+        name="Clients"
         component={Calender}
         options={{
           tabBarIcon: ({focused}) => {

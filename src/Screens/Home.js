@@ -230,53 +230,59 @@ const Home = () => {
               <TouchableOpacity
                 style={{
                   padding: 20,
-                  backgroundColor: COLORS.skyblue,
+                  backgroundColor: COLORS.blue,
                   borderRadius: 10,
-                  width: '45%',
+                  width: '48%',
                 }} onPress={()=>{
                   navigation.navigate('Documents')
                 }}>
-                  <Image
-                  source={require('../assets/home.png')}
-                  style={{alignSelf:'center'}}
-                  />
+                  <View style={{flexDirection:'row'}}>
+                    <AntDesign
+                    name='filetext1'
+                    size={15}
+                    style={{backgroundColor:'white',padding:5,borderRadius:100}}
+                    />
+                    <Text style={{color:'white',alignSelf:'center',marginLeft:10}}>Check In</Text>
+                  </View>
+                  
                 <Text
                   style={{
-                    color: COLORS.black,
+                    color: COLORS.white,
                     fontWeight: 'bold',
                     fontSize: 20,
                     padding:10,
-                    alignSelf:'center'
                   }}>
                  2/10
                 </Text>
               
-                  <Text style={{alignSelf:'center'}}>Documents {'\n'}Required</Text>
+                <Text style={{alignSelf:'center',color:'white'}}>Documents Required</Text>
                </TouchableOpacity>
                   
                <TouchableOpacity
                 style={{
                   padding: 20,
-                  backgroundColor: COLORS.skyblue,
+                  backgroundColor: COLORS.blue,
                   borderRadius: 10,
-                  width: '45%',
+                  width: '48%',
                 }}>
-                  <Image
-                  source={require('../assets/home.png')}
-                  style={{alignSelf:'center'}}
-                  />
+                   <View style={{flexDirection:'row'}}>
+                   <Image
+                   source={require('../assets/shift.png')}
+                   style={{}}
+                   />
+                    <Text style={{color:'white',alignSelf:'center',marginLeft:10}}>Check In</Text>
+                  </View>
                 <Text
                   style={{
-                    color: COLORS.black,
+                    color: COLORS.white,
                     fontWeight: 'bold',
                     fontSize: 20,
                     padding:10,
-                    alignSelf:'center'
                   }}>
                  05
                 </Text>
               
-                  <Text style={{alignSelf:'center'}}>Shift Requests</Text>
+                  <Text style={{alignSelf:'center',color:'white'}}>Shift Requests</Text>
                </TouchableOpacity>
             </View>
             <View
@@ -288,52 +294,58 @@ const Home = () => {
              <TouchableOpacity
                 style={{
                   padding: 20,
-                  backgroundColor: COLORS.skyblue,
+                  backgroundColor: COLORS.blue,
                   borderRadius: 10,
-                  width: '45%',
+                  width: '48%',
                 }}>
-                  <Image
-                  source={require('../assets/home.png')}
-                  style={{alignSelf:'center'}}
-                  />
+                   <View style={{flexDirection:'row'}}>
+                   <Image
+                   source={require('../assets/meet.png')}
+                   style={{}}
+                   />
+                    
+                    <Text style={{color:'white',alignSelf:'center',marginLeft:10}}>Check In</Text>
+                  </View>
                 <Text
                   style={{
-                    color: COLORS.black,
+                    color: COLORS.white,
                     fontWeight: 'bold',
                     fontSize: 20,
                     padding:10,
-                    alignSelf:'center'
                   }}>
-                 02
+                 06
                 </Text>
               
-                  <Text style={{alignSelf:'center'}}>Meets & Greets</Text>
+                  <Text style={{alignSelf:'center',color:'white'}}>Meets & Greets</Text>
                </TouchableOpacity>
                <TouchableOpacity
                 style={{
                   padding: 20,
-                  backgroundColor: COLORS.skyblue,
+                  backgroundColor: COLORS.blue,
                   borderRadius: 10,
-                  width: '45%',
+                  width: '48%',
                 }}>
-                  <Image
-                  source={require('../assets/home.png')}
-                  style={{alignSelf:'center'}}
-                  />
+               <View style={{flexDirection:'row'}}>
+               <Image
+                   source={require('../assets/schedule.png')}
+                   style={{}}
+                   />
+                    <Text style={{color:'white',alignSelf:'center',marginLeft:10}}>Check In</Text>
+                  </View>
                 <Text
                   style={{
-                    color: COLORS.black,
+                    color: COLORS.white,
                     fontWeight: 'bold',
                     fontSize: 20,
                     padding:10,
-                    alignSelf:'center'
                   }}>
                  03
                 </Text>
               
-                  <Text style={{alignSelf:'center'}}>Today's Patient Schedules</Text>
+                  <Text style={{alignSelf:'center',color:'white'}}>Today's Schedules</Text>
                </TouchableOpacity>
             </View>
+            
           </View>
           <Text
             style={{
