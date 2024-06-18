@@ -1,4 +1,4 @@
-import { View, Text,TouchableOpacity,StyleSheet } from 'react-native'
+import { View, Text,TouchableOpacity,StyleSheet, ScrollView } from 'react-native'
 import React,{useState} from 'react'
 import Entypo from 'react-native-vector-icons/Entypo'
 import Ionicons from 'react-native-vector-icons/Ionicons'
@@ -35,7 +35,7 @@ const Documents = () => {
     </TouchableOpacity>
 
     </View>
-
+      <ScrollView>
       <Text style={{margin:10}}>Upload all the documents to hustle free  service</Text>
 
       <View>
@@ -119,6 +119,7 @@ const Documents = () => {
               </View>
         </TouchableOpacity>
        </View>
+       </ScrollView>
     </View>
   )
 }

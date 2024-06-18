@@ -1,15 +1,21 @@
-import { View, Text,TextInput,TouchableOpacity } from 'react-native'
+import { View, Text,TextInput,TouchableOpacity,ImageBackground,Image } from 'react-native'
 import React,{useState} from 'react'
 import { COLORS } from '../Constants/Color'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import { useNavigation } from '@react-navigation/native'
+import Loader from '../Components/Loader'
+import { Card } from 'react-native-paper'
 
 const ForgotPassword = () => {
     const navigation = useNavigation()
+    const [loading,setLoading] = useState(false)
   const [email,setEmail] = useState('')
 
   return (
     <View style={{flex:1}}>
+       <ImageBackground
+      source={require('../assets/backgroundImage.png')}
+      style={{flex:1}}>
         <View style={{flexDirection:'row',margin:5}}>
             <TouchableOpacity onPress={()=>{
                 navigation.goBack()
@@ -17,27 +23,61 @@ const ForgotPassword = () => {
             <AntDesign
             name='left'
             size={25}
-            color={COLORS.black}
+            color={COLORS.white}
             style={{alignSelf:'center'}}
             />
             </TouchableOpacity>
-           <Text style={{alignSelf:'center',marginLeft:100,fontSize:20,color:COLORS.black,fontWeight:'bold'}}>Forgot Password</Text>
+           <Text style={{alignSelf:'center',marginLeft:100,fontSize:20,color:COLORS.white,fontWeight:'bold'}}>Forgot Password</Text>
         </View>
-            <Text style={{alignSelf:'center',color:'black',width:200,margin:10,marginTop:30}}>Enter your email and will send you instruction on how to reset it</Text>
-            <View style={{margin:5,marginTop:20}}>
-                  <TextInput
+       
+        <Loader loading={loading}></Loader>
+
+        <View style={{marginTop: 100, marginLeft: 10}}>
+          <Image
+            source={require('../assets/logo.png')}
+            style={{
+              width: 200,
+              height: 50,
+              margin: 20,
+              borderRadius: 5,
+            }}
+          />
+        </View>
+      
+              <View
+                style={{
+                  justifyContent: 'center',
+                  // flex: 1,
+                }}>
+                <Card
+                  style={{
+                    padding: 10,
+                    backgroundColor: COLORS.white,
+                    alignSelf: 'center',
+                    width: 300,
+                  }}>
+                 
+                  <View
+                    style={{
+                      marginTop: 20,
+                    }}>
+                    <TextInput
                       value={email}
-                      placeholder="Enter Email"
+                      placeholder=" Enter email "
                       onChangeText={text => {
-                           setEmail(text)
+                        setEmail(text)
                       }}
                       style={{
+                        borderWidth: 2,
                         borderRadius: 5,
-                        backgroundColor: 'lightgray',
+                        borderColor: 'lightgray',
                         margin: 5,
                       }}
                     />
-                     <TouchableOpacity
+                  </View>
+                 
+                   
+                  <TouchableOpacity
                     style={{
                       backgroundColor: COLORS.blue,
                       borderRadius: 5,
@@ -47,7 +87,7 @@ const ForgotPassword = () => {
                       marginTop: 20,
                     }}
                     onPress={() => {
-                      navigation.navigate('Login');
+                      navigation.navigate('Login')
                     }}>
                     <Text
                       style={{
@@ -58,7 +98,31 @@ const ForgotPassword = () => {
                      Reset Password
                     </Text>
                   </TouchableOpacity>
-            </View>
+                 
+                  {/* <View style={{flexDirection: 'row'}}>
+                    <Text
+                      style={{color: 'white', alignSelf: 'center', margin: 5}}>
+                      Don't have an account ?{' '}
+                    </Text>
+                    <TouchableOpacity
+                      onPress={() => {
+                        navigation.navigate('Register');
+                      }}>
+                      <Text
+                        style={{
+                          color: 'white',
+                          alignSelf: 'center',
+                          margin: 5,
+                          fontSize: 17,
+                        }}>
+                        Sign Up
+                      </Text>
+                    </TouchableOpacity>
+                  </View> */}
+                </Card>
+              </View>
+         
+        </ImageBackground>
    
     </View>
   )
