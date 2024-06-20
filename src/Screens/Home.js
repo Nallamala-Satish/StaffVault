@@ -152,7 +152,7 @@ const Home = () => {
         </View>
       </View>
       <ScrollView>
-        <View style={{flex: 1}}>
+        <View style={{}}>
           {/* <View
             style={{
               padding: 10,
@@ -205,7 +205,7 @@ const Home = () => {
             }}>
             Select Date
           </Text> */}
-          <View style={{alignSelf: 'center'}}>
+        
             {/* <View style={styles.centered}>
               <Text style={styles.title}>{currentMonth}</Text>
             </View> */}
@@ -223,28 +223,34 @@ const Home = () => {
               </View>
             </View> */}
            <View style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
+                // flexDirection: 'row',
+                // justifyContent: 'space-between',
                 margin: 10,
               }}>
               <TouchableOpacity
                 style={{
                   padding: 20,
-                  backgroundColor: COLORS.blue,
+                  backgroundColor: '#9260f7',
                   borderRadius: 10,
-                  width: '48%',
+                 flexDirection:'row',
+                 justifyContent:'space-around',
+                  margin:10
                 }} onPress={()=>{
                   navigation.navigate('Documents')
                 }}>
-                  <View style={{flexDirection:'row'}}>
+                   <Image
+                   source={require('../assets/file.png')}
+                   style={{alignSelf:'center',width:30,height:30}}
+                   />
+                  {/* <View style={{flexDirection:'row'}}>
                     <AntDesign
                     name='filetext1'
                     size={15}
                     style={{backgroundColor:'white',padding:5,borderRadius:100}}
                     />
                     <Text style={{color:'white',alignSelf:'center',marginLeft:10}}>Check In</Text>
-                  </View>
-                  
+                  </View> */}
+                <Text style={{alignSelf:'center',color:'white',fontSize:17}}>Documents Required</Text>
                 <Text
                   style={{
                     color: COLORS.white,
@@ -252,27 +258,32 @@ const Home = () => {
                     fontSize: 20,
                     padding:10,
                   }}>
-                 2/10
+                 02 
                 </Text>
-              
-                <Text style={{alignSelf:'center',color:'white'}}>Documents Required</Text>
                </TouchableOpacity>
                   
                <TouchableOpacity
                 style={{
                   padding: 20,
-                  backgroundColor: COLORS.blue,
+                  backgroundColor: '#9260f7',
                   borderRadius: 10,
-                  width: '48%',
+                  flexDirection:'row',
+                  justifyContent:'space-around',
+                  margin:10
                 }}>
-                   <View style={{flexDirection:'row'}}>
+                   <Image
+                   source={require('../assets/shift.png')}
+                   style={{alignSelf:'center',width:30,height:30}}
+                   />
+                   {/* <View style={{flexDirection:'row'}}>
                    <Image
                    source={require('../assets/shift.png')}
                    style={{}}
                    />
                     <Text style={{color:'white',alignSelf:'center',marginLeft:10}}>Check In</Text>
-                  </View>
-                <Text
+                  </View> */}
+                  <Text style={{alignSelf:'center',color:'white',fontSize:17}}>Shift Requests</Text>
+                  <Text
                   style={{
                     color: COLORS.white,
                     fontWeight: 'bold',
@@ -281,32 +292,31 @@ const Home = () => {
                   }}>
                  05
                 </Text>
-              
-                  <Text style={{alignSelf:'center',color:'white'}}>Shift Requests</Text>
                </TouchableOpacity>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                margin: 10,
-              }}>
+           
              <TouchableOpacity
                 style={{
                   padding: 20,
-                  backgroundColor: COLORS.blue,
+                  backgroundColor: '#9260f7',
                   borderRadius: 10,
-                  width: '48%',
+                  flexDirection:'row',
+                  justifyContent:'space-around',
+                  margin:10
                 }}>
-                   <View style={{flexDirection:'row'}}>
+                    <Image
+                   source={require('../assets/meet.png')}
+                   style={{alignSelf:'center',width:30,height:30}}
+                   />
+                   {/* <View style={{flexDirection:'row'}}>
                    <Image
                    source={require('../assets/meet.png')}
-                   style={{}}
+                   style={{alignSelf:'center',width:30,height:30}}
                    />
                     
                     <Text style={{color:'white',alignSelf:'center',marginLeft:10}}>Check In</Text>
-                  </View>
-                <Text
+                  </View> */}
+                  <Text style={{alignSelf:'center',color:'white',fontSize:17}}>Meets & Greets</Text>
+                  <Text
                   style={{
                     color: COLORS.white,
                     fontWeight: 'bold',
@@ -315,10 +325,8 @@ const Home = () => {
                   }}>
                  06
                 </Text>
-              
-                  <Text style={{alignSelf:'center',color:'white'}}>Meets & Greets</Text>
                </TouchableOpacity>
-               <TouchableOpacity
+               {/* <TouchableOpacity
                 style={{
                   padding: 20,
                   backgroundColor: COLORS.blue,
@@ -343,10 +351,10 @@ const Home = () => {
                 </Text>
               
                   <Text style={{alignSelf:'center',color:'white'}}>Today's Schedules</Text>
-               </TouchableOpacity>
+               </TouchableOpacity> */}
             </View>
             
-          </View>
+        
           <Text
             style={{
               fontWeight: 'bold',

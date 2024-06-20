@@ -16,23 +16,23 @@ const All = () => {
 
   const Item = ({item})=>{
     return(
-      <View style={{margin:5,backgroundColor:'#EEF4FF',borderRadius:5}}>
+      <View style={{margin:5,backgroundColor:'#72afd3',borderRadius:5}}>
         <TouchableOpacity onPress={()=>{
           navigation.navigate('NotificationDetails',{item:item})
         }}
           style={{padding:10}}>
-          <Text style={{color:COLORS.black,fontWeight:'500',width:280}}>{item.message}</Text>
-          <Text style={{marginTop:5}}>Zip Code 60504,</Text>
-         <Text>Pay rate: Optional</Text>
-         <Text>Diagnosis/Comments:</Text>
+          <Text style={{color:COLORS.white,fontWeight:'500',width:280}}>{item.message}</Text>
+          <Text style={{marginTop:5,color:COLORS.white,}}>Zip Code 60504,</Text>
+         <Text style={{color:COLORS.white,}}>Pay rate: Optional</Text>
+         <Text style={{color:COLORS.white,}}>Diagnosis/Comments:</Text>
          <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-         <TouchableOpacity style={{padding:5,backgroundColor:'white',margin:5,padding:10,width:150}}
+         <TouchableOpacity style={{padding:5,backgroundColor:COLORS.green,margin:5,padding:10,width:150,borderRadius:5}}
          onPress={()=>{}}>
-        <Text style={{alignSelf:'center',color:COLORS.green}}>Accept</Text>
+        <Text style={{alignSelf:'center',color:COLORS.white}}>Accept</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={{padding:5,backgroundColor:'white',margin:5,padding:10,width:150}}
+      <TouchableOpacity style={{padding:5,backgroundColor:'#f74242',margin:5,padding:10,width:150,borderRadius:5}}
          onPress={()=>{}}>
-        <Text style={{alignSelf:'center',color:COLORS.red}}>Decline</Text>
+        <Text style={{alignSelf:'center',color:COLORS.white}}>Decline</Text>
       </TouchableOpacity>
          </View>
         </TouchableOpacity>
