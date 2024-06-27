@@ -14,6 +14,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import CircularProgress from 'react-native-circular-progress-indicator';
 import moment from 'moment';
 import { useNavigation } from '@react-navigation/native';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const Home = () => {
   const scrollViewRef = useRef();
@@ -233,24 +235,24 @@ const Home = () => {
                   backgroundColor: '#9260f7',
                   borderRadius: 10,
                  flexDirection:'row',
-                 justifyContent:'space-around',
+                 
                   margin:10
                 }} onPress={()=>{
                   navigation.navigate('Documents')
                 }}>
-                   <Image
+                   {/* <Image
                    source={require('../assets/file.png')}
                    style={{alignSelf:'center',width:30,height:30}}
-                   />
-                  {/* <View style={{flexDirection:'row'}}>
+                   /> */}
                     <AntDesign
                     name='filetext1'
-                    size={15}
-                    style={{backgroundColor:'white',padding:5,borderRadius:100}}
+                    size={40}
+                    color={'white'}
+                    style={{alignSelf:'center',marginLeft:30}}
                     />
-                    <Text style={{color:'white',alignSelf:'center',marginLeft:10}}>Check In</Text>
-                  </View> */}
-                <Text style={{alignSelf:'center',color:'white',fontSize:17}}>Documents Required</Text>
+                  
+                  <View style={{marginLeft:50}}>
+                <Text style={{alignSelf:'center',color:'white',fontSize:15}}>Document Requests</Text>
                 <Text
                   style={{
                     color: COLORS.white,
@@ -260,29 +262,30 @@ const Home = () => {
                   }}>
                  02 
                 </Text>
+                </View>
                </TouchableOpacity>
                   
                <TouchableOpacity
                 style={{
                   padding: 20,
-                  backgroundColor: '#9260f7',
+                  backgroundColor: '#f7b928',
                   borderRadius: 10,
                   flexDirection:'row',
-                  justifyContent:'space-around',
                   margin:10
                 }}>
-                   <Image
+                   {/* <Image
                    source={require('../assets/shift.png')}
                    style={{alignSelf:'center',width:30,height:30}}
-                   />
-                   {/* <View style={{flexDirection:'row'}}>
-                   <Image
-                   source={require('../assets/shift.png')}
-                   style={{}}
-                   />
-                    <Text style={{color:'white',alignSelf:'center',marginLeft:10}}>Check In</Text>
-                  </View> */}
-                  <Text style={{alignSelf:'center',color:'white',fontSize:17}}>Shift Requests</Text>
+                   /> */}
+                    <FontAwesome5
+                    name='retweet'
+                    size={35}
+                    color={'white'}
+                    style={{alignSelf:'center',marginLeft:30}}
+                    />
+                
+                <View style={{marginLeft:50}}>
+                  <Text style={{alignSelf:'center',color:'white',fontSize:15,}}>Shift Requests</Text>
                   <Text
                   style={{
                     color: COLORS.white,
@@ -292,39 +295,38 @@ const Home = () => {
                   }}>
                  05
                 </Text>
+                </View>
                </TouchableOpacity>
            
              <TouchableOpacity
                 style={{
                   padding: 20,
-                  backgroundColor: '#9260f7',
+                  backgroundColor: '#0073cf',
                   borderRadius: 10,
                   flexDirection:'row',
-                  justifyContent:'space-around',
                   margin:10
                 }}>
-                    <Image
+                    {/* <Image
                    source={require('../assets/meet.png')}
                    style={{alignSelf:'center',width:30,height:30}}
-                   />
-                   {/* <View style={{flexDirection:'row'}}>
-                   <Image
-                   source={require('../assets/meet.png')}
-                   style={{alignSelf:'center',width:30,height:30}}
-                   />
-                    
-                    <Text style={{color:'white',alignSelf:'center',marginLeft:10}}>Check In</Text>
-                  </View> */}
-                  <Text style={{alignSelf:'center',color:'white',fontSize:17}}>Meets & Greets</Text>
+                   /> */}
+                   <FontAwesome
+                    name='handshake-o'
+                    size={35}
+                    color={'white'}
+                    style={{alignSelf:'center',marginLeft:30}}
+                    />
+                
+                <View style={{marginLeft:50}}>
+                  <Text style={{alignSelf:'center',color:'white',fontSize:15}}>Meets & Greets</Text>
                   <Text
                   style={{
                     color: COLORS.white,
                     fontWeight: 'bold',
                     fontSize: 20,
                     padding:10,
-                  }}>
-                 06
-                </Text>
+                  }}>06</Text>
+                </View>
                </TouchableOpacity>
                {/* <TouchableOpacity
                 style={{
