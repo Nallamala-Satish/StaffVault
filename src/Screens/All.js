@@ -27,7 +27,7 @@ const All = () => {
         shadowRadius: 1.84,
         elevation: 5,}}>
         <TouchableOpacity onPress={()=>{
-          navigation.navigate('NotificationDetails',{item:item})
+          // navigation.navigate('NotificationDetails',{item:item})
         }}
           style={{padding:10}}>
           <Text style={{color:COLORS.black,fontWeight:'500',width:280}}>{item.message}</Text>
@@ -44,7 +44,7 @@ const All = () => {
           size={20}
           style={{alignSelf:'center',marginLeft:20}}
           />
-        <Text style={{alignSelf:'center',color:COLORS.white,marginLeft:20}}>Accept</Text>
+        <Text style={{alignSelf:'center',color:COLORS.white,marginLeft:10}}>Accept</Text>
       </TouchableOpacity>
       <TouchableOpacity style={{padding:5,backgroundColor:'#f74242',margin:5,padding:10,width:150,borderRadius:5,flexDirection:'row',alignSelf:'center'}}
          onPress={()=>{}}>
@@ -54,7 +54,7 @@ const All = () => {
           size={20}
           style={{alignSelf:'center',marginLeft:20}}
           />
-        <Text style={{alignSelf:'center',color:COLORS.white,marginLeft:20}}>Decline</Text>
+        <Text style={{alignSelf:'center',color:COLORS.white,marginLeft:5}}>Decline</Text>
       </TouchableOpacity>
          </View>
         </TouchableOpacity>

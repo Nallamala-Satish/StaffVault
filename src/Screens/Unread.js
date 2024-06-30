@@ -33,11 +33,11 @@ const Unread = () => {
   return (
     <View style={{flex:1,backgroundColor:COLORS.white}}>
     <View style={{flex:1}}>
-        <FlatList
+        {/* <FlatList
         data={data}
         renderItem={Item}
         keyExtractor={item =>item.id}
-        />   
+        />    */}
     </View>
   </View>
   );
